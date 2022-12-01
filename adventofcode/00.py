@@ -1,14 +1,12 @@
 from rich import print
-from adventofcode.helper.io.get_input_from_url import get_input_from_url
+
+from adventofcode.helper.io.get_riddle_input import get_riddle_input
 
 
-def main(day: int) -> int:
-    riddle_input = get_input_from_url(f"https://adventofcode.com/2022/day/{day}/input")
-    print(riddle_input)
-
+def main(riddle_input: str) -> int:
+    answer = 0
     return answer
 
 
 if __name__ == "__main__":
-    answer = main(day=)
-    print(answer)
+    print(main(get_riddle_input(__file__)))
