@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from bs4.element import Comment
 
 
+# TODO: maybe make this take the riddle number as an argument
 def get_riddle_input(file: str) -> str:
     file_name = file.split("/")[-1]
     day = int(file_name.split(".")[0])
