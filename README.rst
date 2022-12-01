@@ -9,6 +9,9 @@ Here's a link_ that describes how to get the session cookie.
 
 Then use ``poetry install`` to set up the correct environment. Alternatively, you can open the whole repository within VS Code's devcontainer setup.
 
+To create templates from ``01.py`` to ``24.py``, run ``python adventofcode/helper/template/copy_files.py``.
+The file ``adventofcode/helper/template/00.py`` is used as a template.
+
 Credits
 -------
 

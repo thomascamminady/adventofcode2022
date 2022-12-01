@@ -1,5 +1,3 @@
-from rich import print
-
 from adventofcode.helper.io import get_riddle_input
 
 

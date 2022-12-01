@@ -1,19 +1,15 @@
-from rich import print
-
 from adventofcode.helper.io import get_riddle_input
 
 
 def main(riddle_input: str) -> int:
-    calories = []
-    elfs_calories = []
+    answer = 0
+    current_count = 0
     for x in riddle_input.splitlines():
         if x == "":
-            calories.append(sum(elfs_calories))
-            elfs_calories = []
+            answer = max(answer, current_count)
+            current_count = 0
         else:
-            elfs_calories.append(int(x))
-
-    answer = max(calories)
+            current_count += int(x)
     return answer
 
 
