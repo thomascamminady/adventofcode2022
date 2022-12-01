@@ -4,8 +4,8 @@ adventofcode
 
 Code for the 2022 version of `Advent of Code`_.
 
-To run this code, place a file called `cookies.txt` inside `adventofcode/helper` with the session cookies for Advent of Code.
-
+To run this code, place a file called ``cookies.txt`` inside ``adventofcode/helper`` with the session cookies for Advent of Code.
+Then use ``poetry install`` to set up the correct environment.
 Credits
 -------
 
