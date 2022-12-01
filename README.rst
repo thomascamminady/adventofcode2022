@@ -1,5 +1,5 @@
 ============
-adventofcode
+adventofcode2022
 ============
 
 Code for the 2022 version of `Advent of Code`_.
