@@ -1,6 +1,6 @@
 from rich import print
 
-from adventofcode.helper.io.get_riddle_input import get_riddle_input
+from adventofcode.helper.io import get_riddle_input
 
 
 def main(riddle_input: str) -> int:
