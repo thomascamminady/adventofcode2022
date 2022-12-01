@@ -2,7 +2,7 @@ import os
 import shutil
 
 basefile = "adventofcode/helper/template/00.py"
-for i in range(2, 25):
+for i in range(1, 25):
     dir = "adventofcode/"
     filename = os.path.join(str(i).zfill(2) + ".py")
     fullpath = os.path.join(dir, filename)
