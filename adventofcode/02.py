@@ -45,7 +45,6 @@ def riddle1(riddle_input: str) -> int:
         opponent, me = line.split(" ")
         score1 = outcome(me, opponent)
         score2 = scoreforchoice(me)
-        # print(me, opponent, score1, score2)
         p += score1 + score2
     return p
 
@@ -58,6 +57,8 @@ def outcome_to_action(opponent: str, outcome: str) -> str:
             return "X"
         elif opponent == "C":
             return "Y"
+        else:
+            raise ValueError("Invalid input")
     elif outcome == "Y":  # draw
         if opponent == "A":
             return "X"
@@ -65,6 +66,8 @@ def outcome_to_action(opponent: str, outcome: str) -> str:
             return "Y"
         elif opponent == "C":
             return "Z"
+        else:
+            raise ValueError("Invalid input")
     elif outcome == "Z":
         if opponent == "A":
             return "Y"
@@ -72,6 +75,8 @@ def outcome_to_action(opponent: str, outcome: str) -> str:
             return "Z"
         elif opponent == "C":
             return "X"
+        else:
+            raise ValueError("Invalid input")
     else:
         raise ValueError("Invalid input")
 
@@ -83,7 +88,6 @@ def riddle2(riddle_input: str) -> int:
         me = outcome_to_action(opponent, expected_result)
         score1 = outcome(me, opponent)
         score2 = scoreforchoice(me)
-        # print(me, opponent, score1, score2)
         p += score1 + score2
     return p
 
