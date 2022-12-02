@@ -3,6 +3,16 @@ from bs4 import BeautifulSoup
 from bs4.element import Comment
 
 
+def save_riddle_input(
+    file: str, riddle: str, folder_prefix: str = "adventofcode/riddle_inputs"
+):
+    """Save riddle input to a file"""
+    file_name = file.split("/")[-1]
+    day = int(file_name.split(".")[0])
+    with open(f"{folder_prefix}/{day}.txt", "w") as f:
+        f.write(riddle)
+
+
 # TODO: maybe make this take the riddle number as an argument
 def get_riddle_input(file: str) -> str:
     file_name = file.split("/")[-1]
