@@ -25,8 +25,8 @@ def riddle2(riddle_input: str) -> int:
         else:
             current_count += int(x)
 
-    top3 = sorted(calories, reverse=True)[:3]
-    return sum(top3)
+    top = sorted(calories, reverse=True)[:3]
+    return sum(top)
 
 
 if __name__ == "__main__":
