@@ -3,13 +3,13 @@ from rich import print
 from adventofcode.helper.io import get_riddle_input, save_riddle_input
 
 
-def riddle1(riddle_input: str) -> int:
+def riddle1(riddle_input: str) -> int | str:
     print(riddle_input)
     answer = 0
     return answer
 
 
-def riddle2(riddle_input: str) -> int:
+def riddle2(riddle_input: str) -> int | str:
     print(riddle_input)
     answer = 0
     return answer
