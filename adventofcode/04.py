@@ -1,6 +1,6 @@
 from rich import print
 
-from adventofcode.helper.io import get_riddle_input, save_riddle_input
+from adventofcode.helper.io import get_day, get_riddle_input, save_riddle_input
 
 
 def contains(start0, end0, start1, end1):
@@ -43,8 +43,9 @@ def riddle2(riddle_input: str) -> int:
 
 
 if __name__ == "__main__":
-    riddle_input = get_riddle_input(__file__)
-    save_riddle_input(__file__, riddle_input)
+    day = get_day(__file__)
+    riddle_input = get_riddle_input(day)
+    save_riddle_input(day, riddle_input)
 
     print(riddle1(riddle_input))
-    print(riddle2(get_riddle_input(__file__)))
+    print(riddle2(get_riddle_input(day)))
