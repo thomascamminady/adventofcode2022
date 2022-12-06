@@ -6,7 +6,7 @@ from bs4.element import Comment
 
 
 def get_day(file: str) -> int:
-    return int(__file__.split("/")[-1].split(".")[0])
+    return int(file.split("/")[-1].split(".")[0])
 
 
 def save_riddle_input(
