@@ -102,7 +102,7 @@ def submit_answer(day: int, level: int, answer: Any, year: int = 2022) -> None:
     response = requests.post(
         submit_url, json=payload, cookies={"session": session_cookie}
     )
-    # print(response.text)
+    print(response.text)
 
     # Check the status code of the response to verify that the submission was successful
     if response.status_code == 200:
