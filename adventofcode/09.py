@@ -10,13 +10,14 @@ from adventofcode.helper.io import (
 
 def riddle1(riddle_input: str) -> int | str:
     print(riddle_input)
-    answer = 0
 
+    answer = 0
     return answer
 
 
 def riddle2(riddle_input: str) -> int | str:
-    # print(riddle_input)
+    print(riddle_input)
+
     answer = 0
     return answer
 
@@ -29,5 +30,6 @@ if __name__ == "__main__":
     answer1 = riddle1(riddle_input)
     submit_answer(day, 1, answer1)
 
-    answer2 = riddle2(riddle_input)
-    # submit_answer(day, 2, answer2)
+    if answer1 != 0:
+        answer2 = riddle2(riddle_input)
+        submit_answer(day, 2, answer2)
