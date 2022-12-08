@@ -3,6 +3,7 @@ from typing import Any
 import requests
 from bs4 import BeautifulSoup
 from bs4.element import Comment
+from rich import print
 
 
 def get_day(file: str) -> int:
@@ -74,6 +75,15 @@ def read_only_text_from_url(url: str) -> str:
 
 
 def submit_answer(day: int, level: int, answer: Any, year: int = 2022) -> None:
+    if answer == 0:
+        print("Not submitting 0.")
+        return
+
+    print(answer)
+    print(f"Submit for level {level}? (y/N)")
+    if input() != "y":
+        return
+
     # Get cookie from file
     with open("adventofcode/helper/cookie.txt", "r") as f:
         session_cookie = f.read()
@@ -85,12 +95,14 @@ def submit_answer(day: int, level: int, answer: Any, year: int = 2022) -> None:
     payload = {
         "level": f"{level}",  # The level number (1 or 2)
         "answer": str(answer),
-        "session": session_cookie,
         "debug": "1",
     }
 
     # Send the HTTP POST request to the API endpoint with the payload
-    response = requests.post(submit_url, json=payload)
+    response = requests.post(
+        submit_url, json=payload, cookies={"session": session_cookie}
+    )
+    # print(response.text)
 
     # Check the status code of the response to verify that the submission was successful
     if response.status_code == 200:
