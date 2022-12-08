@@ -6,6 +6,6 @@ run:
 git:
 	pyclean .
 	git add .
-	git commit -m "Day $(shell date +%d)" --allow-empty
-	git commit -m "Day $(shell date +%d)" --allow-empty
+	git commit -m "Day $(shell date +%d)." --allow-empty
+	git commit -m "Day $(shell date +%d)." --allow-empty
 	git push
