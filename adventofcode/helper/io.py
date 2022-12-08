@@ -1,9 +1,16 @@
 from typing import Any
 
+import numpy as np
 import requests
 from bs4 import BeautifulSoup
 from bs4.element import Comment
 from rich import print
+
+
+def input_to_int_matrix(riddle_input: str) -> np.ndarray:
+    return np.array(
+        [[int(_) for _ in line] for line in riddle_input.splitlines()], dtype=int
+    )
 
 
 def get_day(file: str) -> int:
