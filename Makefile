@@ -7,6 +7,6 @@ run:
 
 git:
 	git add .
-	git commit -m "Day $(shell date +%d)"
-	git commit -m "Day $(shell date +%d)"
+	git commit -m "Day $(shell date +%d)" --allow-empty
+	git commit -m "Day $(shell date +%d)" --allow-empty
 	git push
