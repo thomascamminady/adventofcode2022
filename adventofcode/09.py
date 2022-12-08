@@ -30,4 +30,4 @@ if __name__ == "__main__":
     submit_answer(day, 1, answer1)
 
     answer2 = riddle2(riddle_input)
-    # submit_answer(day, 1, answer1)
+    # submit_answer(day, 2, answer2)

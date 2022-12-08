@@ -25,6 +25,13 @@ def save_riddle_input(
         f.write(riddle)
 
 
+def get_cookie() -> str:
+    """Get cookie from file"""
+    with open("adventofcode/helper/cookie.txt", "r") as f:
+        cookie = f.read()
+    return cookie
+
+
 def get_riddle_input(day: int, year: int = 2022) -> str:
     url = f"https://adventofcode.com/{year}/day/{day}/input"
     riddle_input = get_text_from_url(url)
@@ -34,12 +41,8 @@ def get_riddle_input(day: int, year: int = 2022) -> str:
 def get_text_from_url(url: str) -> str:
     """Get input from url, using cookies"""
 
-    # Get cookie from file
-    with open("adventofcode/helper/cookie.txt", "r") as f:
-        cookie = f.read()
-
     # Get input
-    response = requests.get(url, cookies={"session": cookie})
+    response = requests.get(url, cookies={"session": get_cookie()})
     return response.text
 
 
@@ -67,11 +70,8 @@ def text_from_html(body) -> str:
 
 def read_only_text_from_url(url: str) -> str:
     """Get input from url, without cookies"""
-    # Get cookie from file
-    with open("adventofcode/helper/cookie.txt", "r") as f:
-        cookie = f.read()
 
-    response = requests.get(url, cookies={"session": cookie})
+    response = requests.get(url, cookies={"session": get_cookie()})
     text = text_from_html(response.text)
 
     # throw everything away before the first occurence of the word Day
@@ -82,18 +82,16 @@ def read_only_text_from_url(url: str) -> str:
 
 
 def submit_answer(day: int, level: int, answer: Any, year: int = 2022) -> None:
+    print(f"################### day {day}, level {level} ################### ")
+    print(answer)
+
     if answer == 0:
         print("Not submitting 0.")
         return
 
-    print(answer)
     print(f"Submit for level {level}? (y/N)")
     if input() != "y":
         return
-
-    # Get cookie from file
-    with open("adventofcode/helper/cookie.txt", "r") as f:
-        session_cookie = f.read()
 
     # The Advent of Code API endpoint for submitting solutions
     submit_url = f"https://adventofcode.com/{year}/day/{day}/answer"
@@ -107,10 +105,9 @@ def submit_answer(day: int, level: int, answer: Any, year: int = 2022) -> None:
 
     # Send the HTTP POST request to the API endpoint with the payload
     response = requests.post(
-        submit_url, json=payload, cookies={"session": session_cookie}
+        submit_url, json=payload, cookies={"session": get_cookie()}
     )
     print(response.text)
-
     # Check the status code of the response to verify that the submission was successful
     if response.status_code == 200:
         print("Solution submitted successfully!")
