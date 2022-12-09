@@ -1,3 +1,4 @@
+import urllib.request
 from typing import Any
 
 import numpy as np
@@ -5,6 +6,19 @@ import requests
 from bs4 import BeautifulSoup
 from bs4.element import Comment
 from rich import print
+
+
+def website_to_text(day: int, year: int = 2022) -> None:
+    url = f"https://adventofcode.com/{year}/day/{day}"
+
+    webpage = str(urllib.request.urlopen(url).read())
+    soup = BeautifulSoup(webpage, features="html.parser")
+
+    text = str(soup.get_text())
+    text = text.split("\\n")
+    # write text to file
+    for line in text:
+        print(line.strip())
 
 
 def input_to_int_matrix(riddle_input: str) -> np.ndarray:
