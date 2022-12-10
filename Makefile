@@ -4,7 +4,7 @@ run:
 	poetry run python adventofcode/$(shell date +%d).py
 
 git:
-	pyclean .
+	poetry run pyclean .
 	git add .
 	pre-commit run --all-files
 	git commit -m "Day $(shell date +%d)." --allow-empty
