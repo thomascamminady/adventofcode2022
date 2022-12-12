@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "adventofcode"
 version = "0.2022.12"
-description = ""
+description = "Source for the 2022 version of Advent of Code."
 authors = ["Thomas Camminady <0milieux_member@icloud.com>"]
 license = "MIT"
 
