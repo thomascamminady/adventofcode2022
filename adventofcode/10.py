@@ -1,6 +1,4 @@
-import cv2
 import numpy as np
-import pytesseract
 from rich import print
 
 from adventofcode.helper.io import get_day, get_riddle_input, save_riddle_input

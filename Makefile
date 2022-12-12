@@ -5,6 +5,8 @@ run:
 
 git:
 	poetry run pyclean .
+	poetry version 0.2022.$(shell date +%d)
+	poetry lock
 	git add .
 	pre-commit run --all-files
 	git commit -m "Day $(shell date +%d)." --allow-empty

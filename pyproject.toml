@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "adventofcode"
-version = "0.1.0"
+version = "0.2022.12"
 description = ""
 authors = ["Thomas Camminady <0milieux_member@icloud.com>"]
 license = "MIT"
@@ -13,9 +13,6 @@ numpy = "^1.23.5"
 rich = "^12.6.0"
 pyclean = "^2.2.0"
 beautifulsoup4 = "^4.11.1"
-opencv-python = "^4.6.0.66"
-pytesseract = "^0.3.10"
-matplotlib = "^3.6.2"
 
 
 [build-system]
