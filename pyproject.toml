@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "adventofcode"
-version = "0.2022.14"
+version = "0.2022.15"
 description = "Code for the 2022 version of Advent of Code."
 authors = ["Thomas Camminady <0milieux_member@icloud.com>"]
 license = "MIT"
@@ -14,6 +14,7 @@ rich = "^12.6.0"
 pyclean = "^2.2.0"
 beautifulsoup4 = "^4.11.1"
 matplotlib = "^3.6.2"
+shapely = "^2.0.0"
 
 
 [build-system]
